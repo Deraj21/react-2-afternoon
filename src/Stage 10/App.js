@@ -4,13 +4,29 @@ import Employee from './models/Employee';
 
 // components
 import Header from './components/Header';
+import EmployeeEditor from "./components/EmployeeEditor";
+import EmployeeList from "Employeelist";
 
 class App extends Component {
   // constructor
+  constructor(){
+    super();
+
+    this.state = {
+      employees: [],
+      selectedEmployee: null
+    }
+  }
 
   // selectEmployee
+  selectEmployee(){
+
+  }
 
   // refresh
+  refresh(){
+    
+  }
 
   render() {
     return (
