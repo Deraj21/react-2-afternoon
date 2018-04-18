@@ -8,9 +8,21 @@ class EmployeeEditor extends Component {
       originalEmployee: null,
       notModified: true
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.save = this.save.bind(this);
+    this.cancel = this.cancel.bind(this);
+    this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
   }
 
   // componentWillReceiveProps
+  componentWillReceiveProps(props) {
+    this.setState({
+      employee: Object.assign({}, props.selected), // we want copy of the object, not pointer to original
+      originalEmployee: props.selected,
+      notModified: true
+    });
+  }
 
   handleChange(prop, val) {
     if ( this.state.notModified ) {
